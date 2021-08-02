@@ -36,6 +36,9 @@
   --font-family-sans-serif: "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.text-header{
+  font-family: Nunito,sans-serif;
+}
 
 *,
 *::before,

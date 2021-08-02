@@ -226,7 +226,7 @@
                     <div class="container px-5">
                         <div class="row gx-5 align-items-center">
                             <div class="col-lg-6" data-aos="fade-up">
-                                <h1 class="page-header-ui-title">Selamat Datang Di HomePage Gravitasi 2021</h1>
+                                <h1 class="page-header-ui-title text-header font-weight-bold">Selamat Datang Di HomePage Gravitasi 2021</h1>
                                 <p class="page-header-ui-text mb-5">Welcome to SB UI Kit Pro, a toolkit for building
                                     beautiful web interfaces, created by the development team at Start Bootstrap</p>
                                 <a class="btn btn-teal fw-500 me-2" href="#!">
