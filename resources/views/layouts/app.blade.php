@@ -78,8 +78,8 @@
 
     </script>
 
-    <script src="https://assets.startbootstrap.com/js/sb-customizer.js"></script>
-    <sb-customizer project="sb-ui-kit-pro"></sb-customizer>
+    <!-- <script src="https://assets.startbootstrap.com/js/sb-customizer.js"></script>
+    <sb-customizer project="sb-ui-kit-pro"></sb-customizer> -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"rayId":"67733ee42a7742b7","token":"6e2c2575ac8f44ed824cef7899ba8463","version":"2021.7.0","si":10}'>
     </script>

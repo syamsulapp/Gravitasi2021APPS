@@ -212,11 +212,37 @@
                                     </a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown no-caret ml-5">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <!-- Documentation -->
+                                    <i data-feather="user"></i>
+                                    <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end animated--fade-in-up"
+                                    aria-labelledby="navbarDropdownDocs">
+                                    <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-ui-kit-pro/components" target="_blank">
+                                        <div class="icon-stack bg-primary-soft text-primary me-4">
+                                            <i data-feather="log-out"></i></div>
+                                        <div>
+                                            <div class="small text-gray-500">masuk</div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-divider m-0"></div>
+                                    <a class="dropdown-item py-3"
+                                        href="https://docs.startbootstrap.com/sb-ui-kit-pro/quickstart"
+                                        target="_blank">
+                                        <div class="icon-stack bg-primary-soft text-primary me-4"><i
+                                                data-feather="log-in"></i></div>
+                                        <div>
+                                            <div class="small text-gray-500">Daftar</div>
+                                        </div>
+                                    </a>
+                                   
+                                </div>
+                            </li>
                         </ul>
-                        <a class="btn fw-500 ms-lg-4 btn-teal" href="https://shop.startbootstrap.com/sb-ui-kit-pro">
-                            Buy Now
-                            <i class="ms-2" data-feather="arrow-right"></i>
-                        </a>
+                        
                     </div>
                 </div>
             </nav>
@@ -227,7 +253,8 @@
                         <div class="row gx-5 align-items-center">
                             <div class="col-lg-6" data-aos="fade-up">
                                 <h1 class="page-header-ui-title text-header font-weight-bold">Selamat Datang Di HomePage Gravitasi 2021</h1>
-                                <p class="page-header-ui-text mb-5">Welcome to SB UI Kit Pro, a toolkit for building
+                                <p class="page-header-ui-text mb-5">Gravitasi (Gebyar Civitas Sains Fisika) adalah kegiatan tahunan yang diselenggarakan oleh
+                                    Welcome to SB UI Kit Pro, a toolkit for building
                                     beautiful web interfaces, created by the development team at Start Bootstrap</p>
                                 <a class="btn btn-teal fw-500 me-2" href="#!">
                                     Get Started
