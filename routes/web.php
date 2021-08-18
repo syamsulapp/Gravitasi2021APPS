@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\CrapIndex;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,21 +18,10 @@ use SebastianBergmann\CodeCoverage\CrapIndex;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', [Home::class, 'index']);
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/** routes group untuk  hak akses user dan multi login */
+Route::prefix('users')->group(function (){
+    Route::get('/dashboard', [Home::class, 'index'])->name('dashboard');
+});
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

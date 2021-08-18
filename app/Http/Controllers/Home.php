@@ -1,14 +1,20 @@
 <?php
 
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 class Home extends Controller
 {
-    public function index()
+    public function __construct()
     {
-        return view('halo selamat datang di Gravitasi apps 2021');
+        $this->middleware('auth');
     }
 
+    public function index()
+    {
+        return view('home');
+    }
+    /** method dibawah untuk menu dari halaman depan */
     public function home()
     {
     }
