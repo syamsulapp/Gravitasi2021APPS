@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-/** routes group untuk  hak akses user dan multi login */
+/** routes group untuk hak akses user dan multi login */
 Route::prefix('users')->group(function (){
     Route::get('/dashboard', [Home::class, 'index'])->name('dashboard');
 });
