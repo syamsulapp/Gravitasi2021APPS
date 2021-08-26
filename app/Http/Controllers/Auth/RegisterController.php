@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use keygen;
 
 class RegisterController extends Controller
 {
@@ -21,7 +22,6 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
 
     /**
@@ -49,11 +49,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $kostum = [
+            'required' => ':attribute jangan di kosongkan',
+            'email' => 'bukan penulisan email',
+            'password' => 'password tidak sama ',
+            'same' => 'password yang anda masukan tidak sama',
+            'min' => 'minimal 8 karakter',
+            'max' => 'minimal 255 karakter'
+        ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'asalsekolah' => ['required', 'string', 'max:255'],
+            'namasekolah' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password' => ['required', 'string', 'min:8'],
+            'password_conf' => ['required', 'string', 'min:8', 'same:password'],
+        ],$kostum);
     }
 
     /**
@@ -66,8 +77,11 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'asalsekolah' => $data['asalsekolah'],
+            'namasekolah' => $data['namasekolah'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'noreg' => keygen::numeric(10)->generate(),
         ]);
     }
 }

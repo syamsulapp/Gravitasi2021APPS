@@ -26,13 +26,13 @@
             <!-- Navbar-->
             <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-dark fixed-top">
                 <div class="container px-5">
-                    <a class="navbar-brand text-white" href="index.html">SB UI Kit Pro</a>
+                    <a class="navbar-brand text-white" href="{{ url('/') }}">Gravitasi</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto me-lg-5">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Beranda</a></li>
                             <li class="nav-item dropdown dropdown-xl no-caret">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -158,13 +158,12 @@
                             <div class="col-lg-6" data-aos="fade-up">
                                 <h1 class="page-header-ui-title text-header font-weight-bold">Selamat Datang Di HomePage Gravitasi 2021</h1>
                                 <p class="page-header-ui-text mb-5">Gravitasi (Gebyar Civitas Sains Fisika) adalah kegiatan tahunan yang diselenggarakan oleh
-                                    Welcome to SB UI Kit Pro, a toolkit for building
-                                    beautiful web interfaces, created by the development team at Start Bootstrap</p>
-                                <a class="btn btn-teal fw-500 me-2" href="#!">
-                                    Get Started
+                                    Hmj Fisika </p>
+                                <a class="btn btn-teal fw-500 me-2" href="{{ route('register') }}">
+                                        Daftar Sekarang
                                     <i class="ms-2" data-feather="arrow-right"></i>
                                 </a>
-                                <a class="btn btn-link fw-500" href="#!">Learn More</a>
+                                <a class="btn btn-link fw-500" href="">Tata Cara Pendaftaran</a>
                             </div>
                             <div class="col-lg-6 d-none d-lg-block" data-aos="fade-up" data-aos-delay="100"><img
                                     class="img-fluid" src="{{ asset('img/illustrations/windows.svg') }}" /></div>
@@ -582,13 +581,12 @@
             <div class="container px-5">
                 <div class="row gx-5">
                     <div class="col-lg-3">
-                        <div class="footer-brand">SB UI Kit Pro</div>
-                        <div class="mb-3">Design made easy</div>
+                        <div class="footer-brand">Gravitasi</div>
+                        <div class="mb-3">Gerbyar civitas sains fiska</div>
                         <div class="icon-list-social mb-5">
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-instagram"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-facebook"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-github"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="icon-list-social-link" href="https://www.instagram.com/hmjfisika_uho/"><i class="fab fa-instagram"></i></a>
+                            <a class="icon-list-social-link" href="https://www.facebook.com/HMJ-Fisika-UHO-103201558382402"><i class="fab fa-facebook"></i></a>
+                            <a class="icon-list-social-link" href="https://github.com/syamsulapp/Gravitasi2021APPS"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -637,7 +635,7 @@
                 </div>
                 <hr class="my-5" />
                 <div class="row gx-5 align-items-center">
-                    <div class="col-md-6 small">Copyright © Your Website 2021</div>
+                    <div class="col-md-6 small">@ {{ now()->year }} Gravitasi All Reserved</div>
                     <div class="col-md-6 text-md-end small">
                         <a href="#!">Privacy Policy</a>
                         ·

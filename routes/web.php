@@ -25,3 +25,7 @@ Route::prefix('users')->group(function (){
     Route::get('/dashboard', [Home::class, 'index'])->name('dashboard');
 });
 
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+});
+

@@ -1,0 +1,36 @@
+/* Alur Admin Dan users **/
+
+Untuk::bagian('adminMenu')
+      ->('superadmin')
+         -> dashboard
+         -> users management( mengelola users ketika misalnya minta reset password atau create users)
+         -> lomba
+         -> jadwal lomba
+         -> pengumuman
+      ->('admin keuangan')
+          -> management keuangan ( mengatur keuangan yang masuk dari peserta yang sdh membayar uang lomba)
+          -> pembayaran (sub menu)
+                         -> verfikasi(pembayaran) => untuk verfikasi bukti pembayaran peserta
+                         -> valid pembayaran => untuk melihat list peserta yang sdh membayar
+          => alur::verifikasi::pembayaran_peserta
+                    -> masuk ke menu verifikasi pembayaran
+                    -> cek datanya jika yang di upload adalah bukti pembayaran berarti valid tapi
+                        jika tidak maka pembayaran tidak valid dan tidak bisa melanjutkan ke
+                        pendaftaran lomba
+                    -> kasih status valid atau not valid ke peserta yang sdh upload bukti pembayaran
+
+Untuk::bagian('users')
+      menu => -> dashboard
+                -> profile
+                -> lomba yang di ikuti
+                -> pengumuman
+
+     => alur::pendaftarannya
+             -> pilih lomba yang akan di ikuti
+             -> pembayaran uang lomba ( via bank tf, ovo atau gopay)
+             -> upload bukti pembayaran( upload struct pembayaran)
+             -> isi form lomba
+                -> (di diskusikan mengenai 1 tim bisa ikut lomba yang berbeda atau tidak)
+             -> cetak bukti pendaftaran
+             -> cetak kartu peserta
+

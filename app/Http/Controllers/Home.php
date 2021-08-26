@@ -12,7 +12,7 @@ class Home extends Controller
 
     public function index()
     {
-        return view('home');
+        return view('gravitasi.users.dashboard.dashboard');
     }
     /** method dibawah untuk menu dari halaman depan */
     public function home()

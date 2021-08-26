@@ -17,8 +17,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('noreg',128);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('asalsekolah');
+            $table->string('namasekolah');
+            $table->enum('role',['users','admin']);
+            $table->enum('status_pendaftaran_lomba',['N','Y']);
+            $table->enum('status_bayar_lomba',['N','Y']);
             $table->rememberToken();
             $table->timestamps();
         });

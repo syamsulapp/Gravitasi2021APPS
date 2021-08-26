@@ -9,8 +9,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +18,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'noreg',
+        'status_pendaftaran_lomba',
+        'status_bayar_lomba',
+        'role',
+        'namasekolah',
+        'asalsekolah',
     ];
+
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that should be hidden for arrays.
