@@ -6,7 +6,13 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Gravitasi APPS<sup>{{ now()->year }}</sup></div>
+        @if(Auth::user()->role == 'admin')
+            <div class="sidebar-brand-text mx-3">Admin gravitasi<sup>{{ now()->year }}</sup></div>
+        @elseif (Auth::user()->role == 'keuangan')
+            <div class="sidebar-brand-text mx-3">Admin Keuangan<sup>{{ now()->year }}</sup></div>
+        @else
+            <div class="sidebar-brand-text mx-3">Users Gravitasi<sup>{{ now()->year }}</sup></div>
+        @endif
     </a>
 
     <!-- Divider -->
@@ -115,10 +121,13 @@
                  <!-- Divider -->
                  <hr class="sidebar-divider">
                     <!-- Nav Item - Pages Collapse Menu -->
+                    <div class="sidebar-heading">
+                        Management Keuangan Lomba
+                    </div>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
                            aria-expanded="true" aria-controls="collapsePages">
-                            <i class="fas fa-fw fa fa fa-calendar"></i>
+                            <i class="fas fa-fw fa fa-money"></i>
                             <span>Keuangan</span>
                         </a>
                         <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -129,7 +138,15 @@
                             </div>
                         </div>
                     </li>
-    @else
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
+
+                    <!-- Sidebar Toggler (Sidebar) -->
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
+
+        @else
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -155,6 +172,14 @@
                     <i class="fas fa-fw fa fa-bell"></i>
                     <span>Pengumuman Lomba Yang Di Ikuti</span></a>
             </li>
-    @endif
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        @endif
 
 </ul>
