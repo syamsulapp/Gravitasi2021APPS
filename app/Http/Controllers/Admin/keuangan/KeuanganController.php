@@ -9,4 +9,8 @@ class KeuanganController extends Controller {
     {
         $this->middleware('auth');
     }
+
+    public function index() {
+        return view('gravitasi.adminKeuangan.dashboard.dashboardKeuangan');
+    }
 }

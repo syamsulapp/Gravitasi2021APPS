@@ -15,17 +15,21 @@ use App\Http\Controllers\Home;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[Home::class , 'home']);
+
 Auth::routes();
 
-/** routes group untuk hak akses user dan multi login */
+/** routes group untuk hak akses role users (admin , admin keuangan dan users) dan multi login */
+
+/** jika controllernya berada dalam sub folder maka wajib pake namespace routes untuk menjalankan controllernya */
 Route::prefix('users')->group(function (){
-    Route::get('/dashboard', [Home::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\users\DashboardUsersController::class, 'index'])->name('dashboard')->middleware(['roleadmin','roleadminkeuangan']);
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard')->middleware(['roleusers','roleadminkeuangan']);
 });
 
+Route::prefix('admin')->group( function(){
+    Route::get('/keuangan',[\App\Http\Controllers\Admin\Keuangan\KeuanganController::class , 'index'])->name('adminkeuangan')->middleware(['roleusers','roleadmin']);
+});

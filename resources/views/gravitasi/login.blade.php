@@ -3,7 +3,6 @@
 @section('judul','Login Gravitasi')
 
 @section('konten')
-
     <body class="bg-gradient-primary">
 
     <div class="container">
