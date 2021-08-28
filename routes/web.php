@@ -28,6 +28,15 @@ Route::prefix('users')->group(function (){
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard')->middleware(['roleusers','roleadminkeuangan']);
+
+    /** routes for users management */
+    Route::get('/users-management',[\App\Http\Controllers\Admin\UsersManagementController::class , 'index'])->name('users-management')->middleware(['roleusers','roleadminkeuangan']);
+    Route::get('/view-tambah-users',[\App\Http\Controllers\Admin\UsersManagementController::class , 'view_tambah'])->name('tambah-users')->middleware(['roleusers','roleadminkeuangan']);
+    Route::post('/tambah-users',[\App\Http\Controllers\Admin\UsersManagementController::class , 'adddata'])->name('tambah-users')->middleware(['roleusers','roleadminkeuangan']);
+    /** edit data */
+    Route::get('/users-view/{editdata}/edit',[\App\Http\Controllers\Admin\UsersManagementController::class , 'viewedit'])->name('users-view-edit')->middleware(['roleusers','roleadminkeuangan']);
+    Route::put('/users-view/{dataLama}/ubah',[\App\Http\Controllers\Admin\UsersManagementController::class ,'ubahdata'])->name('users-view-ubah')->middleware(['roleusers','roleadminkeuangan']);
+    Route::delete('/users-management/{hapusdata}/delete',[\App\Http\Controllers\Admin\UsersManagementController::class ,'delete'])->name('delete-data')->middleware(['roleusers','roleadminkeuangan']);
 });
 
 Route::prefix('admin')->group( function(){
