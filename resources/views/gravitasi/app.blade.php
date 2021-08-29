@@ -66,3 +66,8 @@
 
 <!-- Page level custom scripts -->
 <script src="{{ asset('assets/js/demo/datatables-demo.js') }}"></script>
+
+<!-- sweet alert 2 -->
+<script src="{{ asset('assets/dist/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('assets/sweetalert/config.js') }}"></script>
+

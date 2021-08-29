@@ -25,13 +25,13 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">{{ __('Users Management') }}</h1>
+                    <h1 class="h3 mb-0 text-gray-800">{{ __('Data Lomba') }}</h1>
                 </div>
-{{--                @if($pesan = Session::get('sukses'))--}}
-{{--                    <div class="alert alert-success" role="alert">--}}
-{{--                        {{ $pesan }}--}}
-{{--                    </div>--}}
-{{--                @endif--}}
+                {{--                @if($pesan = Session::get('sukses'))--}}
+                {{--                    <div class="alert alert-success" role="alert">--}}
+                {{--                        {{ $pesan }}--}}
+                {{--                    </div>--}}
+                {{--                @endif--}}
                 <div class="flash-data" data-flashdata="@if($pesan = Session::get('sukses')){{ $pesan }}@endif"></div>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -39,7 +39,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">{{ __('Daftar Users') }}</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">{{ __('Daftar Lomba') }}</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -47,10 +47,8 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Noreg</th>
+                                        <th>Nama Lomba</th>
+                                        <th>Deskripsi</th>
                                         <th>Edit</th>
                                         <th>Hapus</th>
                                     </tr>
@@ -58,38 +56,34 @@
                                     <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Noreg</th>
+                                        <th>Nama Lomba</th>
+                                        <th>Deskripsi</th>
                                         <th>Edit</th>
                                         <th>Hapus</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
                                     <tr>
-                                        @foreach($users_management as $u)
+                                        @foreach($lomba as $l)
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $u->name }}</td>
-                                            <td>{{ $u->email }}</td>
-                                            <td>{{ $u->role }}</td>
-                                            <td>{{ $u->noreg }}</td>
-                                            <td><a href="{{ ('users-view/') }}{{ $u->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
+                                            <td>{{ $l->nama_lomba }}</td>
+                                            <td>{{ $l->deskripsi_lomba }}</td>
+                                            <td><a href="{{ ('lomba') }}{{ ('/') }}{{ $l->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
-                                                    <span class="text">Edit Users</span>
+                                                    <span class="text">Edit Lomba</span>
                                                 </a></td>
                                             <td>
-                                                <form action="{{ url('admin/users-management') }}{{ ('/') }}{{ $u->id }}{{ ('/') }}{{ ('delete') }}" method="POST">
+                                                <form action="{{ url('admin/delete') }}{{ ('/') }}{{ $l->id }}{{ ('/') }}{{ ('lomba') }}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                <button class="btn btn-danger btn-icon-split">
+                                                    <button class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
-                                                    <span class="text">Hapus Users</span>
-                                                </button></form></td>
+                                                        <span class="text">Hapus Lomba</span>
+                                                    </button></form></td>
                                     </tr>
                                     @endforeach
                                     </tbody>

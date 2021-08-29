@@ -37,6 +37,27 @@ Route::prefix('admin')->group(function () {
     Route::get('/users-view/{editdata}/edit',[\App\Http\Controllers\Admin\UsersManagementController::class , 'viewedit'])->name('users-view-edit')->middleware(['roleusers','roleadminkeuangan']);
     Route::put('/users-view/{dataLama}/ubah',[\App\Http\Controllers\Admin\UsersManagementController::class ,'ubahdata'])->name('users-view-ubah')->middleware(['roleusers','roleadminkeuangan']);
     Route::delete('/users-management/{hapusdata}/delete',[\App\Http\Controllers\Admin\UsersManagementController::class ,'delete'])->name('delete-data')->middleware(['roleusers','roleadminkeuangan']);
+
+    /** ============ end: routes USERS MANAGEMENT ================= */
+
+
+    /** ============ begin: routes CRUD lomba ================= */
+    /** routes for lomba */
+    Route::get('/lomba-view',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'lombaGravitasi'])->name('lomba-view')->middleware(['roleusers','roleadminkeuangan']);
+    Route::get('/lomba-tambah',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'formtambahlomba'])->name('lomba-tambah')->middleware(['roleusers','roleadminkeuangan']);
+    Route::post('/lomba/insert',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'insertdatalomba'])->name('insert-data-lomba')->middleware(['roleusers','roleadminkeuangan']);
+
+    Route::get('/lomba/{getlomba}/edit',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class , 'edit'])->name('edit-data-lomba')->middleware(['roleusers','roleadminkeuangan']);
+    Route::put('/lomba/{datalama}/update',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'updatelomba'])->name('update-data-lomba')->middleware(['roleusers','roleadminkeuangan']);
+
+    Route::delete('/delete/{deletelomba}/lomba',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class , 'delete_lomba'])->name('delete-lomba')->middleware(['roleusers','roleadminkeuangan']);
+    /** ============ end: routes CRUD lomba ================= */
+
+
+    /** routes for CRUD jadwal lomba */
+    Route::get('/jadwal-lomba-view',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'jadwallomba'])->name('jadwal-lomba')->middleware(['roleusers','roleadminkeuangan']);
+    Route::get('/jadwal-form',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'formtambahjadwal'])->name('form-jadwal-lomba')->middleware(['roleusers','roleadminkeuangan']);
+    Route::post('/insert-jadwal-lomba',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'insertdatajadwal'])->name('insert-data-lomba')->middleware(['roleusers','roleadminkeuangan']);
 });
 
 Route::prefix('admin')->group( function(){

@@ -67,8 +67,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Lomba:</h6>
-                        <a class="collapse-item" href="login.html">Daftar Lomba</a>
-                        <a class="collapse-item" href="login.html">Buat Lomba</a>
+                        <a class="collapse-item" href="{{ url('admin/lomba-view') }}">Daftar Lomba</a>
+                        <a class="collapse-item" href="{{ url('admin/lomba-tambah') }}">Buat Lomba</a>
                     </div>
                 </div>
             </li>
@@ -82,8 +82,8 @@
                 <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Jadwal Lomba:</h6>
-                        <a class="collapse-item" href="login.html">Daftar Jadwal Lomba</a>
-                        <a class="collapse-item" href="login.html">Buat Jadwal Lomba</a>
+                        <a class="collapse-item" href="{{ url('admin/jadwal-lomba-view') }}">Daftar Jadwal Lomba</a>
+                        <a class="collapse-item" href="{{ url('admin/jadwal-form') }}">Buat Jadwal Lomba</a>
                     </div>
                 </div>
             </li>
