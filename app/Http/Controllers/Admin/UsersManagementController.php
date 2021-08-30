@@ -20,6 +20,11 @@ class UsersManagementController extends Controller {
         return view('gravitasi.admin.UsersManagement.users_management',compact('users_management'));
     }
 
+    public function peserta() {
+        $peserta = AdminModels::all();
+        return view('gravitasi.admin.UsersManagement.view-data-peserta',compact('peserta'));
+    }
+
     public function view_tambah() {
         return view('gravitasi.admin.UsersManagement.users_tambah');
     }

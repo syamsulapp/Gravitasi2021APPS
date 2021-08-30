@@ -79,7 +79,6 @@ class CreateJadwalLOmbaController extends Controller {
     /** ===== end controller lomba ========= */
 
 
-
     /** method/function dibawah khusus untuk jadwal lomba */
     public function jadwallomba(ModelsJadwal $getjadwal) {
         $jadwal = $getjadwal->all();
@@ -114,5 +113,42 @@ class CreateJadwalLOmbaController extends Controller {
         return redirect('admin/jadwal-lomba-view')->with('sukses','data jadwal lomba berhasil di tambahkan');
 
     }
+    public function delete_jadwal(ModelsJadwal $deletejadwal) {
+        ModelsJadwal::destroy('id', $deletejadwal->id);
+
+        return redirect('admin/jadwal-lomba-view')->with('sukses','data jadwal lomba berhasil di hapus');
+    }
+
+    public function edit_jadwal(ModelsJadwal $editjadwal) {
+        return view('gravitasi.admin.jadwalLomba.edit_jadwal_lomba',compact('editjadwal'));
+    }
+
+    public function update_jadwal(Request $databaru, ModelsJadwal $datalama) {
+
+        $kostum = [
+            'required' => ':attribute jangan di kosongkan',
+            'min' => 'minimal 4 karakter',
+            'max' => 'maximal 128 karakter',
+        ];
+
+        $databaru->validate([
+            'nama_lomba'=> 'required|max:128|min:4',
+            'deskripsi_lomba' => 'required|max:128|min:4',
+            'jadwal_lomba' => 'required',
+            'waktu' => 'required',
+        ], $kostum);
+
+        ModelsJadwal::where('id',$datalama->id)
+            ->update([
+                'nama_lomba' => $databaru->nama_lomba,
+                'tanggal' => $databaru->jadwal_lomba,
+                'waktu' => $databaru->waktu,
+                'deskripsi_jadwal_lomba' => $databaru->deskripsi_lomba,
+            ]);
+        return redirect('admin/jadwal-lomba-view')->with('sukses','data jadwal lomba berhasil di ubah');
+
+    }
+
+
 
 }

@@ -27,11 +27,11 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">{{ __('Users Management') }}</h1>
                 </div>
-{{--                @if($pesan = Session::get('sukses'))--}}
-{{--                    <div class="alert alert-success" role="alert">--}}
-{{--                        {{ $pesan }}--}}
-{{--                    </div>--}}
-{{--                @endif--}}
+                {{--                @if($pesan = Session::get('sukses'))--}}
+                {{--                    <div class="alert alert-success" role="alert">--}}
+                {{--                        {{ $pesan }}--}}
+                {{--                    </div>--}}
+                {{--                @endif--}}
                 <div class="flash-data" data-flashdata="@if($pesan = Session::get('sukses')){{ $pesan }}@endif"></div>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -39,7 +39,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">{{ __('Daftar Akun Admin') }}</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">{{ __('Daftar Akun Peserta') }}</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -68,29 +68,33 @@
                                     </tfoot>
                                     <tbody>
                                     <tr>
-                                        @foreach($users_management as $u)
-                                            @if($u->role != 'users')
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $u->name }}</td>
-                                            <td>{{ $u->email }}</td>
-                                            <td>{{ $u->role }}</td>
-                                            <td>{{ $u->noreg }}</td>
-                                            <td><a href="{{ ('users-view/') }}{{ $u->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
+                                        @foreach($peserta as $p)
+                                            @if($p->role != 'admin' && $p->role != 'keuangan')
+                                                <td>
+                                                    @if($loop->iteration >= 3)
+                                                        {{ $loop->iteration - 2 }}
+                                                    @endif
+                                                </td>
+                                                <td>{{ $p->name }}</td>
+                                                <td>{{ $p->email }}</td>
+                                                <td>{{ $p->role }}</td>
+                                                <td>{{ $p->noreg }}</td>
+                                                <td><a href="{{ url('admin/users-view') }}{{ ('/') }}{{ $p->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
-                                                    <span class="text">Edit Users</span>
-                                                </a></td>
-                                            <td>
-                                                <form action="{{ url('admin/users-management') }}{{ ('/') }}{{ $u->id }}{{ ('/') }}{{ ('delete') }}" method="POST">
-                                                    @method('delete')
-                                                    @csrf
-                                                <button class="btn btn-danger btn-icon-split">
+                                                        <span class="text">Edit Peserta</span>
+                                                    </a></td>
+                                                <td>
+                                                    <form action="{{ url('admin/users-management') }}{{ ('/') }}{{ $p->id }}{{ ('/') }}{{ ('delete') }}" method="POST">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
-                                                    <span class="text">Hapus Users</span>
-                                                </button></form></td>
+                                                            <span class="text">Hapus Peserta</span>
+                                                        </button></form></td>
                                             @endif
                                     </tr>
                                     @endforeach

@@ -38,6 +38,8 @@ Route::prefix('admin')->group(function () {
     Route::put('/users-view/{dataLama}/ubah',[\App\Http\Controllers\Admin\UsersManagementController::class ,'ubahdata'])->name('users-view-ubah')->middleware(['roleusers','roleadminkeuangan']);
     Route::delete('/users-management/{hapusdata}/delete',[\App\Http\Controllers\Admin\UsersManagementController::class ,'delete'])->name('delete-data')->middleware(['roleusers','roleadminkeuangan']);
 
+    Route::get('/users/peserta',[\App\Http\Controllers\Admin\UsersManagementController::class ,'peserta'])->name('tampil-data-perserta')->middleware(['roleusers','roleadminkeuangan']);
+
     /** ============ end: routes USERS MANAGEMENT ================= */
 
 
@@ -58,6 +60,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/jadwal-lomba-view',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'jadwallomba'])->name('jadwal-lomba')->middleware(['roleusers','roleadminkeuangan']);
     Route::get('/jadwal-form',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'formtambahjadwal'])->name('form-jadwal-lomba')->middleware(['roleusers','roleadminkeuangan']);
     Route::post('/insert-jadwal-lomba',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'insertdatajadwal'])->name('insert-data-lomba')->middleware(['roleusers','roleadminkeuangan']);
+
+    Route::get('/jadwal/{editjadwal}/edit',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class , 'edit_jadwal'])->name('edit-jadwal')->middleware(['roleusers','roleadminkeuangan']);
+    Route::put('/jadwal/{datalama}/update',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'update_jadwal'])->name('update-jadwal')->middleware(['roleusers','roleadminkeuangan']);
+    Route::delete('/delete/{deletejadwal}/hapus-jadwal',[\App\Http\Controllers\Admin\CreateJadwalLOmbaController::class ,'delete_jadwal'])->name('delete-jadwal')->middleware(['roleusers','roleadminkeuangan']);
 });
 
 Route::prefix('admin')->group( function(){

@@ -74,21 +74,21 @@
                                             <td>{{ $j->tanggal }}</td>
                                             <td>{{ $j->waktu }}</td>
                                             <td>{{ $j->deskripsi_jadwal_lomba }}</td>
-                                            <td><a href="{{ ('lomba') }}{{ ('/') }}{{ $j->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
+                                            <td><a href="{{ ('jadwal') }}{{ ('/') }}{{ $j->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
-                                                    <span class="text">Edit Lomba</span>
+                                                    <span class="text">Edit Jadwal</span>
                                                 </a></td>
                                             <td>
-                                                <form action="{{ url('admin/delete') }}{{ ('/') }}{{ $j->id }}{{ ('/') }}{{ ('lomba') }}" method="POST">
+                                                <form action="{{ url('admin/delete') }}{{ ('/') }}{{ $j->id }}{{ ('/') }}{{ ('hapus-jadwal') }}" method="POST">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
-                                                        <span class="text">Hapus Lomba</span>
+                                                        <span class="text">Hapus Jadwal</span>
                                                     </button></form></td>
                                     </tr>
                                     @endforeach
