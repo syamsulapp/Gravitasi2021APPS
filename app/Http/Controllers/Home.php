@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 
 class Home extends Controller
@@ -13,6 +14,7 @@ class Home extends Controller
 
     public function about()
     {
+        return 'tampilan about';
     }
 
     public function kontak()

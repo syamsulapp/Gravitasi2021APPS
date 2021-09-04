@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\ModelsAdmin;
+namespace App\Models\ModelsUsers;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ModelsLomba extends Model
+class ModelsUsers extends Model
 {
+
     protected $table = 'tbl_lomba';
-    protected $fillable = ['nama_lomba', 'deskripsi_lomba', 'jenis_lomba', 'jadwal_lomba'];
     use HasFactory;
 }

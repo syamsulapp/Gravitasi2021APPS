@@ -3,21 +3,22 @@
 @section('judul','halaman dashboard')
 
 @section('konten')
-    <body id="page-top">
+
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- menunya -->
-    @include('gravitasi.menu.menu')
-    <!-- // menunya -->
+        @include('gravitasi.menu.menu')
+        <!-- // menunya -->
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- header -->
-        @include('gravitasi.layouts.header')
-        <!-- end header -->
+            @include('gravitasi.layouts.header')
+            <!-- end header -->
 
             <!-- Begin Page Content -->
             <!-- konten begin -->
@@ -25,7 +26,7 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Tambah Jadwal Lomba</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Edit Jadwal Lomba</h1>
                 </div>
 
                 <!-- begin tambha data -->
@@ -55,8 +56,8 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">{{ __('Deskripsi Lomba') }}</label>
-                            <input type="text" name="deskripsi_lomba" class="form-control @error('deskripsi_lomba') is-invalid @enderror" id="inputPassword4" placeholder="deskripsi lomba" value="{{ $editjadwal->deskripsi_jadwal_lomba }}">
+                            <label for="inputPassword4">{{ __("Ketentuan Lomba") }}</label>
+                            <textarea class="form-control  @error('deskripsi_lomba') is-invalid @enderror" name="deskripsi_lomba" aria-valuemax="128" value="{{ $editjadwal->deskripsi_jadwal_lomba }}"></textarea>
                             @error('deskripsi_lomba')
                             <span class="invalid-feedback" role="alert">{{ $message }}</span>
                             @enderror
@@ -82,8 +83,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -100,6 +100,6 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
 @endsection

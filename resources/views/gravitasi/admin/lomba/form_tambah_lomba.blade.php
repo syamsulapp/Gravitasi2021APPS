@@ -3,21 +3,22 @@
 @section('judul','halaman dashboard')
 
 @section('konten')
-    <body id="page-top">
+
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- menunya -->
-    @include('gravitasi.menu.menu')
-    <!-- // menunya -->
+        @include('gravitasi.menu.menu')
+        <!-- // menunya -->
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- header -->
-        @include('gravitasi.layouts.header')
-        <!-- end header -->
+            @include('gravitasi.layouts.header')
+            <!-- end header -->
 
             <!-- Begin Page Content -->
             <!-- konten begin -->
@@ -46,6 +47,23 @@
                             <span class="invalid-feedback" role="alert">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Jenis Lomba</label>
+                            <select id="inputState" name="jenis_lomba" class="form-control" required>
+                                <option selected disabled value="">Pilih...</option>
+                                <option>SMA</option>
+                                <option>SMP</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Jadwal Lomba</label>
+                            <select id="inputState" name="jadwal_lomba" class="form-control" required>
+                                <option selected disabled value="">Pilih...</option>
+                                @foreach($jadwal_lomba as $j)
+                                <option>{{ $j->tanggal }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Tambah Lomba</button>
                     <a href="{{ url('admin/lomba-view') }}" class="btn btn-primary">Kembali</a>
@@ -67,8 +85,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -85,6 +102,6 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
 @endsection

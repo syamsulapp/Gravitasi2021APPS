@@ -3,21 +3,22 @@
 @section('judul','halaman dashboard')
 
 @section('konten')
-    <body id="page-top">
+
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- menunya -->
-    @include('gravitasi.menu.menu')
-    <!-- // menunya -->
+        @include('gravitasi.menu.menu')
+        <!-- // menunya -->
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- header -->
-        @include('gravitasi.layouts.header')
-        <!-- end header -->
+            @include('gravitasi.layouts.header')
+            <!-- end header -->
 
             <!-- Begin Page Content -->
             <!-- konten begin -->
@@ -55,7 +56,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Deskripsi Lomba</label>
-                            <input type="text" name="deskripsi_lomba" class="form-control @error('deskripsi_lomba') is-invalid @enderror" id="inputPassword4" placeholder="deskripsi lomba" value="{{ old('deskripsi_lomba') }}">
+                            <textarea class="form-control  @error('deskripsi_lomba') is-invalid @enderror" name="deskripsi_lomba" aria-valuemax="10"></textarea>
                             @error('deskripsi_lomba')
                             <span class="invalid-feedback" role="alert">{{ $message }}</span>
                             @enderror
@@ -81,8 +82,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -99,6 +99,6 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
 @endsection

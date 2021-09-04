@@ -55,7 +55,8 @@ class RegisterController extends Controller
             'password' => 'password tidak sama ',
             'same' => 'password yang anda masukan tidak sama',
             'min' => 'minimal 8 karakter',
-            'max' => 'minimal 255 karakter'
+            'max' => 'minimal 255 karakter',
+            'unique' => 'email yang anda masukan sdh ada'
         ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -64,7 +65,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'password_conf' => ['required', 'string', 'min:8', 'same:password'],
-        ],$kostum);
+        ], $kostum);
     }
 
     /**

@@ -3,7 +3,8 @@
 @section('judul','Register gravitasi')
 
 @section('konten')
-    <body class="bg-gradient-primary">
+
+<body class="bg-gradient-primary">
 
     <div class="container">
 
@@ -21,61 +22,54 @@
                                 @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text"  name="name" class="form-control form-control-user @error('name') is-invalid @enderror" id="exampleFirstName"
-                                               placeholder="Nama Pendamping">
+                                        <input type="text" name="name" class="form-control form-control-user @error('name') is-invalid @enderror" id="exampleFirstName" placeholder="Nama Pendamping">
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="email" class="form-control form-control-user @error('email') is-invalid @enderror " id="exampleLastName"
-                                               placeholder="Email">
+                                        <input type="text" name="email" class="form-control form-control-user @error('email') is-invalid @enderror " id="exampleLastName" placeholder="Email">
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" name="namasekolah" class="form-control form-control-user  @error('namasekolah') is-invalid  @enderror " id="namasekolah"
-                                               placeholder="Nama Sekolah">
+                                        <input type="text" name="namasekolah" class="form-control form-control-user  @error('namasekolah') is-invalid  @enderror " id="namasekolah" placeholder="Nama Sekolah">
                                         @error('namasekolah')
                                         <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="asalsekolah" class="form-control form-control-user @error('asalsekolah') is-invalid @enderror"  id="asalsekolah"
-                                               placeholder="asal sekolah">
-                                        @error('asalsekolah')
-                                        <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                        @enderror
+                                        <select id="inputState" name="asalsekolah" class="form-control" required>
+                                            <option selected disabled value="">Pilih...asal sekolah</option>
+                                            <option>SMA</option>
+                                            <option>SMP</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror"
-                                               id="exampleInputPassword" placeholder="masukan password">
+                                        <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="masukan password">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" name="password_conf" class="form-control form-control-user @error('password_conf') is-invalid @enderror"
-                                               id="exampleRepeatPassword" placeholder="ketik ulang passwordnya">
+                                        <input type="password" name="password_conf" class="form-control form-control-user @error('password_conf') is-invalid @enderror" id="exampleRepeatPassword" placeholder="ketik ulang passwordnya">
                                         @error('password_conf')
                                         <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                 </div>
@@ -94,7 +88,7 @@
         </div>
 
     </div>
-    </body>
+</body>
 
 
 @endsection

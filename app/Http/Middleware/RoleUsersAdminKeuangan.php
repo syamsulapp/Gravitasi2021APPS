@@ -17,8 +17,8 @@ class RoleUsersAdminKeuangan
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role == 'keuangan') {
-            return redirect('admin/keuangan');
+        if (Auth::user()->role == 'keuangan') {
+            return redirect('adminkeuangan/keuangan');
         }
         return $next($request);
     }

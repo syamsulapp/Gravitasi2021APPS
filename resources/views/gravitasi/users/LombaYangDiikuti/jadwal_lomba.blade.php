@@ -38,7 +38,7 @@
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Daftar Lomba</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Jadwal Lomba</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -57,29 +57,27 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama Lomba</th>
-                                                <th>deskripsi lomba</th>
-                                                <th>Kategori Lomba</th>
-                                                <th>Jadwal Lomba</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th>Ketentuan Lomba</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            @foreach($lomba as $l)
-                                            @if(Auth::user()->asalsekolah == $l->jenis_lomba)
+                                            @foreach($jadwal as $j)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $l->nama_lomba }}</td>
-                                                <td>{{ $l->deskripsi_lomba }}</td>
-                                                <td>{{ $l->jenis_lomba }}</td>
-                                                <td>{{ $l->jadwal_lomba }}</td>
-                                                <td><a href="{{ ('users-view/') }}{{ $l->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
+                                                <td>{{ $j->nama_lomba }}</td>
+                                                <td>{{ $j->tanggal }}</td>
+                                                <td>{{ $j->waktu }}</td>
+                                                <td>{{ $j->deskripsi_jadwal_lomba }}</td>
+                                                <td><a href="{{ url('users/detail_jadwal') }}{{ ('/') }}{{ $j->id }}{{ ('/') }}{{ ('detail') }}" class="btn btn-info btn-icon-split">
                                                         <span class="icon text-white-50">
                                                             <i class="fas fa-info-circle"></i>
                                                         </span>
-                                                        <span class="text">Daftar Sekarang</span>
+                                                        <span class="text">Lihat</span>
                                                     </a></td>
                                             </tr>
-                                            @endif
                                             @endforeach
                                         </tbody>
                                     </table>

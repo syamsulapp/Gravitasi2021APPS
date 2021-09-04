@@ -1,0 +1,24 @@
+
+Alur::pendaftaranLomba
+1=> register akun
+2=> daftar lomba
+3=> membayar {
+    methode Tf : {
+        upload bukti tf
+    }
+}
+4=> isi form {
+    2:
+}
+5=> cetak bukti pendaftaran
+6=> cetak kartu peserta /id card
+
+kalo peserta hanya daftar akun sj tapi tidak daftar lomba 
+else : membayar baru ikut lomba
+
+memimash mana sekolah yang fix untuk ikut lomba sama yang tidak
+
+ketika peserta nya sdh up bukti tf => admin khusus keuangan => verfikasi pembayaran peserta 
+
+cara memverif => tinggal ke menu valid pembayaran => lihat peseta 
+

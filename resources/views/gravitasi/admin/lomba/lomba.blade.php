@@ -3,21 +3,22 @@
 @section('judul','halaman dashboard')
 
 @section('konten')
-    <body id="page-top">
+
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- menunya -->
-    @include('gravitasi.menu.menu')
-    <!-- // menunya -->
+        @include('gravitasi.menu.menu')
+        <!-- // menunya -->
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- header -->
-        @include('gravitasi.layouts.header')
-        <!-- end header -->
+            @include('gravitasi.layouts.header')
+            <!-- end header -->
 
             <!-- Begin Page Content -->
             <!-- konten begin -->
@@ -27,11 +28,11 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">{{ __('Data Lomba') }}</h1>
                 </div>
-                {{--                @if($pesan = Session::get('sukses'))--}}
-                {{--                    <div class="alert alert-success" role="alert">--}}
-                {{--                        {{ $pesan }}--}}
-                {{--                    </div>--}}
-                {{--                @endif--}}
+                {{-- @if($pesan = Session::get('sukses'))--}}
+                {{-- <div class="alert alert-success" role="alert">--}}
+                {{-- {{ $pesan }}--}}
+                {{-- </div>--}}
+                {{-- @endif--}}
                 <div class="flash-data" data-flashdata="@if($pesan = Session::get('sukses')){{ $pesan }}@endif"></div>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -45,33 +46,33 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Lomba</th>
-                                        <th>Deskripsi</th>
-                                        <th>Edit</th>
-                                        <th>Hapus</th>
-                                    </tr>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Lomba</th>
+                                            <th>Deskripsi</th>
+                                            <th>Edit</th>
+                                            <th>Hapus</th>
+                                        </tr>
                                     </thead>
                                     <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Lomba</th>
-                                        <th>Deskripsi</th>
-                                        <th>Edit</th>
-                                        <th>Hapus</th>
-                                    </tr>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Lomba</th>
+                                            <th>Deskripsi</th>
+                                            <th>Edit</th>
+                                            <th>Hapus</th>
+                                        </tr>
                                     </tfoot>
                                     <tbody>
-                                    <tr>
-                                        @foreach($lomba as $l)
+                                        <tr>
+                                            @foreach($lomba as $l)
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $l->nama_lomba }}</td>
                                             <td>{{ $l->deskripsi_lomba }}</td>
                                             <td><a href="{{ ('lomba') }}{{ ('/') }}{{ $l->id }}{{ ('/') }}{{ ('edit') }}" class="btn btn-info btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
                                                     <span class="text">Edit Lomba</span>
                                                 </a></td>
                                             <td>
@@ -79,13 +80,15 @@
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-trash"></i>
-                                            </span>
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-trash"></i>
+                                                        </span>
                                                         <span class="text">Hapus Lomba</span>
-                                                    </button></form></td>
-                                    </tr>
-                                    @endforeach
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -114,8 +117,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -132,6 +134,6 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
 @endsection
